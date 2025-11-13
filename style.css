@@ -32,7 +32,7 @@ body {
 
 /* --- LOGO & ANIMATION STYLING --- */
 .company-logo {
-    width: 500px; 
+    width: 600px; 
     height: auto;
     /* Ensure the logo is always on top of the canvas */
     position: relative; 

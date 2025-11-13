@@ -69,7 +69,7 @@ body {
 
 /* Hover Effect: The logo still gets a distinct glow for interaction */
 #logo-container:hover .company-logo {
-    filter: drop-shadow(0 0 20px var(--color-text-gray)); /* Enhanced glow effect on hover */
+    filter: drop-shadow(0 0 20px var(--color-text-light)); /* Enhanced glow effect on hover */
 }
 /* ------------------------ */
 

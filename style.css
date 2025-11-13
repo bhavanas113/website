@@ -1,0 +1,272 @@
+/* Color Palette */
+:root {
+    --color-dark-charcoal: #1f2937; /* Dark Gray/Blue for Background */
+    --color-vibrant-blue: #3b82f6;  /* Vibrant Blue for Accents */
+    --color-lime-green: #a3e635;    /* Lime Green for Highlights */
+    --color-text-light: #f3f4f6;    /* Light Text */
+    --color-text-gray: #9ca3af;     /* Secondary Gray Text */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-text-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Helper Classes */
+.blue-text { color: var(--color-vibrant-blue); }
+.highlight-green { color: var(--color-lime-green); }
+.gray-text { color: var(--color-text-gray); }
+.bold { font-weight: 700; }
+.ml-4 { margin-left: 1rem; } 
+
+/* --- LOGO & ANIMATION STYLING --- */
+.company-logo {
+    width: 500px; 
+    height: auto;
+    /* Ensure the logo is always on top of the canvas */
+    position: relative; 
+    z-index: 10; 
+    transition: filter 0.3s; /* Adds a subtle glow transition */
+}
+
+/* Container for Logo and Canvas */
+#logo-container {
+    position: relative; 
+    /* Increased size for the permanent animated area */
+    width: 400px; 
+    height: 400px; 
+    margin: 0 auto 30px auto;
+    /* Adjust logo position within the larger container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Canvas for Neuron Animation */
+#neuronCanvas {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    z-index: 5; /* Behind the logo */
+    pointer-events: none; 
+    /* CRITICAL UPDATE: ALWAYS VISIBLE AND MAX BRIGHTNESS (1.0 opacity) */
+    opacity: 1.0; 
+    transition: opacity 0.5s ease; 
+}
+
+/* Hover Effect: The logo still gets a distinct glow for interaction */
+#logo-container:hover .company-logo {
+    filter: drop-shadow(0 0 20px var(--color-text-gray)); /* Enhanced glow effect on hover */
+}
+/* ------------------------ */
+
+/* 1. HERO SECTION */
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
+    border-bottom: 5px solid var(--color-vibrant-blue);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem; 
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero-section h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-vibrant-blue);
+    margin-top: 10px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-top: 15px;
+}
+
+/* 2. PERFORMANCE ADVANTAGE SECTION */
+.performance-advantage, .modernization-difference {
+    padding: 80px 0 40px 0;
+    text-align: center;
+}
+
+.performance-advantage h3, .modernization-difference h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--color-text-light);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+/* Services Grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: #2c3a4f; 
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 300px; 
+    text-align: left;
+    border-top: 4px solid var(--color-vibrant-blue);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.service-card h4 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.service-card i {
+    margin-right: 10px;
+}
+
+.tech-edge {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* 3. MODERNIZATION DIFFERENCE */
+.modernization-difference {
+    padding-bottom: 80px;
+}
+.metrics-table {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #2c3a4f;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #3c4a5f;
+    text-align: center;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row.header {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-vibrant-blue);
+}
+
+.testimonial {
+    font-size: 1.1rem;
+    color: var(--color-text-gray);
+    border-left: 4px solid var(--color-vibrant-blue);
+    padding-left: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+/* 4. CONTACT SECTION (FOOTER) */
+.contact-section {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #1a232f; 
+    border-top: 1px solid #3c4a5f;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--color-vibrant-blue);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.cta-button i {
+    margin-right: 8px;
+}
+
+.sub-cta {
+    margin: 20px 0 30px 0;
+    font-style: italic;
+    color: var(--color-text-gray);
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #3c4a5f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.contact-info i {
+    color: var(--color-vibrant-blue);
+    margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section h2 { font-size: 1.8rem; }
+    .services-grid { flex-direction: column; }
+    .service-card { flex: 1 1 100%; }
+    .table-row { font-size: 0.9rem; }
+    .contact-info p { flex-direction: column; }
+    
+    /* Responsive adjustment for the larger container */
+    .company-logo { width: 150px; }
+    #logo-container { width: 250px; height: 250px; } 
+}
